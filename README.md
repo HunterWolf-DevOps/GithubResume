@@ -189,9 +189,8 @@ Contributions, issues, and feature requests are welcome!
 ## 📧 Contact
 
 **Ramakrishnan Sakthivel**
-- Email: ramakrishnan.sakthivel7@gmail.com
+- Email: contact@ramakrishnan-resume.com
 - LinkedIn: [linkedin.com/in/blackhawk](https://www.linkedin.com/in/blackhawk/)
-- Location: Bournemouth, UK
 
 ## 🌟 Show Your Support
 
