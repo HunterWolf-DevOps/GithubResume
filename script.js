@@ -180,6 +180,58 @@ if (window.innerWidth < 768) {
     cursorGlow.style.display = 'none';
 }
 
+// Contact Form Handling
+const contactForm = document.getElementById('contact-form');
+const formStatus = document.getElementById('form-status');
+
+if (contactForm) {
+    contactForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        
+        const submitBtn = contactForm.querySelector('button[type="submit"]');
+        const btnText = submitBtn.querySelector('.btn-text');
+        const originalText = btnText.textContent;
+        
+        // Disable button and show loading state
+        submitBtn.disabled = true;
+        btnText.textContent = 'Sending...';
+        formStatus.style.display = 'none';
+        
+        try {
+            const formData = new FormData(contactForm);
+            const response = await fetch(contactForm.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
+            
+            if (response.ok) {
+                // Success
+                formStatus.className = 'form-status success';
+                formStatus.textContent = '✓ Message sent successfully! I\'ll get back to you soon.';
+                formStatus.style.display = 'block';
+                contactForm.reset();
+            } else {
+                // Error
+                formStatus.className = 'form-status error';
+                formStatus.textContent = '✗ Oops! Something went wrong. Please try again or contact me via LinkedIn.';
+                formStatus.style.display = 'block';
+            }
+        } catch (error) {
+            // Network error
+            formStatus.className = 'form-status error';
+            formStatus.textContent = '✗ Network error. Please check your connection and try again.';
+            formStatus.style.display = 'block';
+        } finally {
+            // Re-enable button
+            submitBtn.disabled = false;
+            btnText.textContent = originalText;
+        }
+    });
+}
+
 // Log page load
 console.log('%c🚀 Resume Loaded Successfully!', 'color: #00f3ff; font-size: 20px; font-weight: bold;');
 console.log('%cBuilt with modern web technologies', 'color: #b0b0b0; font-size: 14px;');

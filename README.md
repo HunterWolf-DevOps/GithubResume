@@ -8,6 +8,7 @@ A modern, futuristic, and interactive resume website built with pure HTML, CSS, 
 - **Smooth Animations**: Glitch effects, fade-ins, parallax scrolling, and more
 - **Fully Responsive**: Optimized for all devices (mobile, tablet, desktop)
 - **Interactive Elements**: Cursor glow effect, hover animations, and smooth scrolling
+- **Contact Form**: Integrated Formspree form for privacy-protected communication
 - **Performance Optimized**: Fast loading with minimal dependencies
 - **SEO Friendly**: Semantic HTML structure
 
@@ -86,6 +87,12 @@ live-resume/
    - Modify experience timeline items
    - Update skills and technologies
    - Change contact information
+
+2. **Setup Contact Form** (See FORMSPREE_SETUP.md):
+   - Create free Formspree account
+   - Get your form ID
+   - Update form action URL in index.html
+   - Test and deploy!
 
 2. **Customize Colors** in `styles.css`:
    ```css
